@@ -1,34 +1,38 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>Start Page</title>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styling/style.css">
+    <title>Student Management System</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f3f6fb; margin: 0; padding: 40px 16px; }
+        .card { max-width: 520px; margin: auto; background: white; padding: 30px; border-radius: 14px; box-shadow: 0 8px 28px #20386418; }
+        h1 { color: #203864; margin-top: 0; }
+        p { color: #596579; }
+        label { display: block; margin: 16px 0 6px; font-weight: bold; }
+        input { box-sizing: border-box; width: 100%; padding: 11px; border: 1px solid #cbd3df; border-radius: 7px; }
+        button { margin-top: 22px; width: 100%; padding: 12px; border: 0; border-radius: 7px; background: #203864; color: white; font-size: 16px; cursor: pointer; }
+    </style>
 </head>
-
 <body>
-    <h1>Hello World!!</h1>
-    <form action="./api" method="POST">
-        <label>Name: </label><input type="text" name="user" autocomplete="off"><br><br>
-        <input type="submit" value="Submit" name="USER"><br><br>
-        <input type="submit" value="Enter as admin via Request Dispatcher" name="ADMIN_Dispatcher"><br><br>
-        <input type="submit" value="Enter as admin via Response Redirect" name="ADMIN_Redirect"><br><br>
-    </form>
-    <label>Click here for JDBC, Servlet, JSP Demonstration</label>
-    <div class="buttons">
-        <form action="data_insertion.jsp" method="POST">
-            <input type="submit" value="Register">
-        </form>
-        <form action="data_search.jsp" method="POST">
-            <input type="submit" value="Login">
-        </form>
-        <form action="view.jsp" method="POST">
-            <input type="submit" value="Delete">
-        </form>
-    </div>
-</body>
+<div class="card">
+    <h1>Student Management</h1>
+    <p>Enter student details to register a student.</p>
+    <form action="students" method="post">
+        <label for="id">Student ID</label>
+        <input id="id" type="text" name="id" required>
 
+        <label for="name">Student Name</label>
+        <input id="name" type="text" name="name" required>
+
+        <label for="department">Department</label>
+        <input id="department" type="text" name="department" required>
+
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" required>
+
+        <button type="submit">Add Student</button>
+    </form>
+</div>
+</body>
 </html>
